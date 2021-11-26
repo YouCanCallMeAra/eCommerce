@@ -2,11 +2,15 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useGetCategoryByCategoryQuery } from "../services/productsApi";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
+import { addToCart } from "../features/CartSlice";
 
 export default function ItemsOfSingleCategory() {
   let { category } = useParams();
+  const dispatch = useDispatch();
 
   const {
     data = [],
@@ -37,11 +41,13 @@ export default function ItemsOfSingleCategory() {
           <div className="product-bottom-details">
             <div className="product-price">{products.price}$</div>
             <div className="product-links">
-              <a href="">
-                <FontAwesomeIcon icon={faHeart} />
-              </a>
-              <a href="">
-                <FontAwesomeIcon icon={faShoppingCart} />
+              <a className="">
+                <FontAwesomeIcon
+                  icon={faShoppingCart}
+                  onClick={() => {
+                    dispatch(addToCart(products));
+                  }}
+                />
               </a>
             </div>
           </div>

@@ -1,34 +1,41 @@
 import React from "react";
 import TheCarousel from "../components/TheCarousel";
-// import Category from "../uselessComps/Category";
 
 import ProductsComp from "../components/ProductsComp";
 import CategoriesComp from "../components/CategoriesComp";
-import { Container } from "react-bootstrap";
-import ShoppingCart from "./ShoppingCart";
+import ScrollAnimation from "react-animate-on-scroll";
+// import HeroComp from "../components/HeroComp";
 
 export default function Home() {
   return (
     <div className="main-home-div">
       <TheCarousel />
+      {/* <HeroComp /> */}
 
-      <Container className="home-items-container">
+      <div className="home-items-container">
+        <h1 style={{ color: "rgb(49, 49, 59)" }}>CATEGORIES</h1>
         {/* CAtegory Comp Called back in Home Page */}
-        <div className="category-container">
-          <div className="category">
-            <CategoriesComp />
-          </div>
+        {/* <div className="category-container"> */}
+        <div className="category">
+          <CategoriesComp />
         </div>
-      </Container>
+        {/* </div> */}
+      </div>
+      <hr />
 
-      <Container className="home-items-container">
+      <div className="home-items-container">
+        <h1
+          style={{
+            color: "rgb(49, 49, 59)",
+          }}
+        >
+          OUR PRODUCTS
+        </h1>
         {/* Product Comp Called back in Home Page */}
         <div className="card-div">
           <ProductsComp />
         </div>
-      </Container>
-
-      {/* <ShoppingCart /> */}
+      </div>
     </div>
   );
 }

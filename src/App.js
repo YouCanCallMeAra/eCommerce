@@ -1,14 +1,10 @@
-import React from "react";
-
+import { React, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import TheNavbar from "./components/TheNavbar";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-// import Categories from "./pages/Categories";
 import Register from "./pages/Register";
-import { Switch } from "antd";
 import "bootstrap/dist/css/bootstrap.min.css";
-
 import "./App.css";
 import "./ProductCard.css";
 import "../node_modules/antd/dist/antd.css";
@@ -17,12 +13,16 @@ import ProductsPage from "./pages/ProductsPage";
 import ItemsOfSingleCategory from "./pages/ItemsOfSingleCategory";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import CategoriesComp from "./components/CategoriesComp";
-// import ItemByCategoryPage from "./pages/ItemByCategoryPage";
+import ShoppingCart from "./pages/ShoppingCart";
 
 function App() {
+  const [open, setOpen] = useState(false);
+  // const handleToggle = () => setOpen(!open);
+
   return (
     <div className="App">
       <TheNavbar />
+      {/* <NavBar /> */}
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -56,6 +56,7 @@ function App() {
           }
         />
         <Route path="/register" element={<Register />} />
+        <Route path="/cart" element={<ShoppingCart />} />
       </Routes>
     </div>
   );
