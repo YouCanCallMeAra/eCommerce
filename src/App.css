@@ -1,11 +1,12 @@
 /* Write your global CSS here */
 /* Note that you don't need to do Normalization as react-bootstrap does it for us */
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
-body {
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap");
+
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 .App {
   height: 100vh;
@@ -92,8 +93,8 @@ body {
   align-items: center;
   justify-content: center;
   background-color: white;
-  padding-top: 50px;
-  padding-bottom: 100px;
+  padding-top: 120px;
+  padding-bottom: 300px;
 }
 .category {
   padding-top: 50px;
@@ -105,7 +106,7 @@ body {
 }
 
 .single-category {
-  background-color: orange;
+  background-color: blue;
   border-radius: 50%;
   width: 170px;
   height: 170px;
@@ -140,17 +141,32 @@ body {
     ),
     url("https://images.pexels.com/photos/6984661/pexels-photo-6984661.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
       center; */
-  background-color: teal;
+  /* background-color: teal; */
   background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-.register-wrapper {
-  width: 40%;
-  padding: 20px;
-  background-color: white;
+@media (min-width: 320px) {
+  .register-wrapper {
+    width: 90%;
+    padding: 20px;
+    background-color: white;
+  }
+}
+@media (min-width: 650px) {
+  .register-wrapper {
+    width: 70%;
+    padding: 20px;
+    background-color: white;
+  }
+}
+@media (min-width: 1025px) {
+  .register-wrapper {
+    width: 40%;
+    padding: 20px;
+    background-color: white;
+  }
 }
 
 .register-wrapper title {
@@ -195,18 +211,38 @@ body {
     ),
     url("https://images.pexels.com/photos/6984650/pexels-photo-6984650.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
       center; */
-  background-color: teal;
+  /* background-color: teal; */
   background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-.login-container wrapper {
+@media (min-width: 320px) {
+  .login-container wrapper {
+    width: 65%;
+    padding: 20px;
+    background-color: white;
+  }
+}
+@media (min-width: 650px) {
+  .login-container wrapper {
+    width: 45%;
+    padding: 20px;
+    background-color: white;
+  }
+}
+@media (min-width: 1025px) {
+  .login-container wrapper {
+    width: 25%;
+    padding: 20px;
+    background-color: white;
+  }
+}
+/* .login-container wrapper {
   width: 25%;
   padding: 20px;
   background-color: white;
-}
+} */
 
 .login-container title {
   font-size: 24px;
@@ -319,8 +355,8 @@ body {
     align-items: center;
     /* background-color: teal; */
     width: 100%;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 300px;
+    margin-bottom: 300px;
   }
   .main-shopping-cart-container {
     margin: 50px;
@@ -370,8 +406,8 @@ body {
     align-items: center;
     /* background-color: teal; */
     width: 100%;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 300px;
+    margin-bottom: 300px;
   }
 
   .main-shopping-cart-container {
@@ -421,8 +457,8 @@ body {
     align-items: center;
     /* background-color: teal; */
     width: 100%;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 300px;
+    margin-bottom: 300px;
   }
   .main-shopping-cart-container {
     margin: 0px;

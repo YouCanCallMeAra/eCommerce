@@ -14,6 +14,7 @@ import ItemsOfSingleCategory from "./pages/ItemsOfSingleCategory";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import CategoriesComp from "./components/CategoriesComp";
 import ShoppingCart from "./pages/ShoppingCart";
+import FooterComp from "./components/FooterComp";
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -58,6 +59,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/cart" element={<ShoppingCart />} />
       </Routes>
+      <FooterComp />
     </div>
   );
 }

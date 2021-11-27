@@ -18,25 +18,20 @@ export default function ShoppingCart() {
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
 
-  function addQuantity() {
-    setQuantity(quantity + 1);
-  }
+  // function addQuantity() {
+  //   setQuantity = quantity + 1;
+  // }
 
-  function decQuantity() {
-    setQuantity(quantity - 1);
-  }
+  // function decQuantity() {
+  //   setQuantity = quantity - 1;
+  // }
 
   var totalPrice = 0;
-  var itemsTotalPrice = 0;
   return (
     <div className="main-main-shopping-cart-container">
       <div className="main-shopping-cart-container">
         {cart.map((product, index) => {
-          itemsTotalPrice = product.price * quantity;
-          totalPrice += itemsTotalPrice;
-          if (quantity === 0) {
-            dispatch(removeFromCart(product._id));
-          }
+          totalPrice += product.price;
           return (
             <div className="shopping-cart-container">
               <div className="shopping-cart-item-img">
@@ -44,12 +39,17 @@ export default function ShoppingCart() {
               </div>
               <div className="shopping-cart-item-details">
                 <h3>{product.name}</h3>
-                <p>Quantity: {quantity}</p>
-                <p>{itemsTotalPrice}$</p>
+
+                <p>{product.price}$</p>
                 <div className="product-links">
-                  <a className="">
-                    <FontAwesomeIcon icon={faMinus} onClick={decQuantity} />
-                  </a>
+                  {/* <a className="">
+                    <FontAwesomeIcon
+                      icon={faMinus}
+                      onClick={() => {
+                        dispatch(addToCart(product));
+                      }}
+                    />
+                  </a> */}
                   <a className="">
                     <FontAwesomeIcon
                       icon={faTrash}
@@ -59,7 +59,12 @@ export default function ShoppingCart() {
                     />
                   </a>
                   <a className="">
-                    <FontAwesomeIcon icon={faPlus} onClick={addQuantity} />
+                    <FontAwesomeIcon
+                      icon={faPlus}
+                      onClick={() => {
+                        dispatch(addToCart(product));
+                      }}
+                    />
                   </a>
                 </div>
               </div>
@@ -68,7 +73,7 @@ export default function ShoppingCart() {
         })}
       </div>
       <div className="shopping-cart-total">
-        <h1>TOTAL:{totalPrice.toFixed(2)}$</h1>
+        <h1>TOTAL:{totalPrice}$</h1>
         <Button
           variant="outline-primary"
           onClick={() => {

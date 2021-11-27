@@ -2,12 +2,26 @@ import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
-import NavDropdown from "react-bootstrap/NavDropdown";
+
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import Badge from "@mui/material/Badge";
+import { styled } from "@mui/material/styles";
+import IconButton from "@mui/material/IconButton";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { useSelector } from "react-redux";
 
 export default function TheNavbar() {
+  const cart = useSelector((state) => state.cart.value);
+  const StyledBadge = styled(Badge)(({ theme }) => ({
+    "& .MuiBadge-badge": {
+      right: -3,
+      top: 13,
+      border: `2px solid ${theme.palette.background.paper}`,
+      padding: "0 4px",
+    },
+  }));
   return (
     <Navbar
       collapseOnSelect
@@ -23,11 +37,11 @@ export default function TheNavbar() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Nav.Link as={Link} to="/cart" style={{ color: "orange" }}>
-          <div className="nav-bar-cart-icon">
-            <a class="">
-              <FontAwesomeIcon icon={faShoppingCart} />
-            </a>
-          </div>
+          <IconButton aria-label="cart">
+            <StyledBadge badgeContent={cart.length} color="primary">
+              <ShoppingCartIcon />
+            </StyledBadge>
+          </IconButton>
         </Nav.Link>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
