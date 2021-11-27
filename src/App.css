@@ -1,6 +1,7 @@
 /* Write your global CSS here */
 /* Note that you don't need to do Normalization as react-bootstrap does it for us */
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap");
+@import url(https://fonts.googleapis.com/css?family=Amatic+SC:400,700);
 
 * {
   padding: 0;
@@ -15,6 +16,92 @@
 .main-home-div {
   background-color: #ffffff;
 }
+
+@media (min-width: 320px) {
+  .my-hero-div {
+    background-image: url("https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1020&q=80");
+    background-position: top;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+  .my-hero-div h1 {
+    font-size: 5rem;
+    text-align: center;
+    height: 7vh;
+    line-height: 1vh;
+    color: #fcedd8;
+    /* background: #d52e3f; */
+    font-family: "Niconne", cursive;
+    font-weight: 700;
+    text-shadow: 5px 5px 0px #eb452b, 10px 10px 0px #efa032,
+      15px 15px 0px #46b59b;
+  }
+}
+
+@media (min-width: 650px) {
+  .my-hero-div {
+    background-image: url("https://images.unsplash.com/photo-1627483297929-37f416fec7cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 79vh;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-attachment: fixed;
+    position: relative;
+  }
+
+  .my-hero-div h1 {
+    font-size: 7rem;
+    text-align: center;
+    height: 7vh;
+    line-height: 1vh;
+    color: #fcedd8;
+    /* background: #d52e3f; */
+    font-family: "Niconne", cursive;
+    font-weight: 700;
+    text-shadow: 5px 5px 0px #eb452b, 10px 10px 0px #efa032,
+      15px 15px 0px #46b59b;
+  }
+}
+@media (min-width: 1025px) {
+  .my-hero-div {
+    background-image: url("https://images.unsplash.com/photo-1627483298235-f3bac2567c1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-attachment: fixed;
+    position: relative;
+  }
+  .my-hero-div h1 {
+    font-size: 12rem;
+    text-align: center;
+    height: 7vh;
+    line-height: 1vh;
+    color: #fcedd8;
+    /* background: #d52e3f; */
+    font-family: "Niconne", cursive;
+    font-weight: 700;
+    text-shadow: 5px 5px 0px #eb452b, 10px 10px 0px #efa032,
+      15px 15px 0px #46b59b;
+  }
+}
+
+/* .my-hero-div img {
+  object-fit: cover;
+  width: 100%;
+  height: 100vh;
+} */
 
 /* home comps media query */
 
@@ -62,19 +149,6 @@
   object-fit: cover;
 }
 
-/* .featured-section {
-  background-color: black;
-  padding: 10px;
-  padding-top: 50px;
-  padding-bottom: 100px;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-} */
-
 .card-div {
   display: flex;
   width: 100%;
@@ -106,7 +180,7 @@
 }
 
 .single-category {
-  background-color: blue;
+  background-color: orange;
   border-radius: 50%;
   width: 170px;
   height: 170px;
@@ -353,7 +427,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    /* background-color: teal; */
+
     width: 100%;
     margin-top: 300px;
     margin-bottom: 300px;

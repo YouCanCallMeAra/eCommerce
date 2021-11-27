@@ -32,8 +32,8 @@ a {
     text-transform: uppercase;
     font-size: 13px;
     font-weight: 700;
-    background: red;
-    color: #fff;
+    background: yellow;
+    color: rgb(32, 32, 34);
     padding: 3px 10px;
   }
 

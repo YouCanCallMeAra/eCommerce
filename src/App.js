@@ -8,7 +8,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import "./ProductCard.css";
 import "../node_modules/antd/dist/antd.css";
-import ProductsComp from "./components/ProductsComp";
 import ProductsPage from "./pages/ProductsPage";
 import ItemsOfSingleCategory from "./pages/ItemsOfSingleCategory";
 import ProductDetailPage from "./pages/ProductDetailPage";
@@ -18,12 +17,10 @@ import FooterComp from "./components/FooterComp";
 
 function App() {
   const [open, setOpen] = useState(false);
-  // const handleToggle = () => setOpen(!open);
 
   return (
     <div className="App">
       <TheNavbar />
-      {/* <NavBar /> */}
 
       <Routes>
         <Route path="/" element={<Home />} />
