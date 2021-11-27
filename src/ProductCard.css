@@ -32,8 +32,8 @@ a {
     text-transform: uppercase;
     font-size: 13px;
     font-weight: 700;
-    background: yellow;
-    color: rgb(32, 32, 34);
+    background: orange;
+    color: white;
     padding: 3px 10px;
   }
 
@@ -154,8 +154,8 @@ a {
     text-transform: uppercase;
     font-size: 13px;
     font-weight: 700;
-    background: red;
-    color: #fff;
+    background: orange;
+    color: white;
     padding: 3px 10px;
   }
 
@@ -276,8 +276,8 @@ a {
     text-transform: uppercase;
     font-size: 13px;
     font-weight: 700;
-    background: red;
-    color: #fff;
+    background: orange;
+    color: white;
     padding: 3px 10px;
   }
 
