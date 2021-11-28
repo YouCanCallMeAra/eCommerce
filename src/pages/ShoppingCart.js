@@ -2,33 +2,25 @@ import { React, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 // import ProductsComp from "../components/ProductsComp";
 // import { useGetProductsQuery } from "../services/productsApi";
-import { addToCart, removeFromCart } from "../features/CartSlice";
+import {
+  addToCart,
+  removeFromCart,
+  // incrementQuantity,
+  // decrementQuantity,
+} from "../features/CartSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Button from "react-bootstrap/Button";
-import {
-  faTrash,
-  // faShoppingCart,
-  faPlus,
-  faMinus,
-} from "@fortawesome/free-solid-svg-icons";
+import { faTrash, faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 
 export default function ShoppingCart() {
-  // const { data = [], isLoading } = useGetProductsQuery();
   const cart = useSelector((state) => state.cart.value);
   const dispatch = useDispatch();
-  const [quantity, setQuantity] = useState(1);
-
-  // function addQuantity() {
-  //   setQuantity = quantity + 1;
-  // }
-
-  // function decQuantity() {
-  //   setQuantity = quantity - 1;
-  // }
 
   var totalPrice = 0;
   return (
     <div className="main-main-shopping-cart-container">
+      <h1 style={{ margin: "60px" }}>Shopping Cart</h1>
+
       <div className="main-shopping-cart-container">
         {cart.map((product, index) => {
           totalPrice += product.price;
@@ -42,14 +34,14 @@ export default function ShoppingCart() {
 
                 <p>{product.price}$</p>
                 <div className="product-links">
-                  {/* <a className="">
+                  <a className="">
                     <FontAwesomeIcon
                       icon={faMinus}
                       onClick={() => {
-                        dispatch(addToCart(product));
+                        alert("Not Implemented yet!");
                       }}
                     />
-                  </a> */}
+                  </a>
                   <a className="">
                     <FontAwesomeIcon
                       icon={faTrash}
@@ -62,7 +54,7 @@ export default function ShoppingCart() {
                     <FontAwesomeIcon
                       icon={faPlus}
                       onClick={() => {
-                        dispatch(addToCart(product));
+                        alert("Not Implemented yet!");
                       }}
                     />
                   </a>
@@ -73,7 +65,7 @@ export default function ShoppingCart() {
         })}
       </div>
       <div className="shopping-cart-total">
-        <h1>TOTAL:{totalPrice}$</h1>
+        <h1>TOTAL:{totalPrice.toFixed(2)}$</h1>
         <Button
           variant="outline-primary"
           onClick={() => {

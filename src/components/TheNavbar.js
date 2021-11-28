@@ -26,13 +26,17 @@ export default function TheNavbar() {
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top">
       <Container>
         {/* as={Link} means use react-router's Link component under the hood */}
-        <Navbar.Brand as={Link} to="/" style={{ color: "orange" }}>
+        <Navbar.Brand
+          as={Link}
+          to="/"
+          style={{ color: "orange", fontWeight: "bolder", fontSize: "23px" }}
+        >
           Bit Store
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Nav.Link as={Link} to="/cart" style={{ color: "orange" }}>
           <IconButton aria-label="cart">
-            <StyledBadge badgeContent={cart.length} color="primary">
+            <StyledBadge badgeContent={cart.length} color="warning">
               <ShoppingCartIcon style={{ color: "white" }} />
             </StyledBadge>
           </IconButton>

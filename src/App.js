@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import TheNavbar from "./components/TheNavbar";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -14,6 +14,7 @@ import ProductDetailPage from "./pages/ProductDetailPage";
 import CategoriesComp from "./components/CategoriesComp";
 import ShoppingCart from "./pages/ShoppingCart";
 import FooterComp from "./components/FooterComp";
+import NotFound from "./pages/NotFound";
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -23,8 +24,6 @@ function App() {
       <TheNavbar />
 
       <Routes>
-        <Route path="/" element={<Home />} />
-
         <Route
           path="/categories"
           element={
@@ -55,6 +54,9 @@ function App() {
         />
         <Route path="/register" element={<Register />} />
         <Route path="/cart" element={<ShoppingCart />} />
+        <Route path="/not-found" element={<NotFound />} />
+        <Route path="/" exact element={<Home />} />
+        <Route path="*" element={<Navigate to="/not-found" />} />
       </Routes>
       <FooterComp />
     </div>
