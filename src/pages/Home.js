@@ -3,8 +3,10 @@ import React from "react";
 
 import ProductsComp from "../components/ProductsComp";
 import CategoriesComp from "../components/CategoriesComp";
+
 import ScrollAnimation from "react-animate-on-scroll";
 import HeroComp from "../components/HeroComp";
+import BrandsComp from "../components/BrandsComp";
 
 export default function Home() {
   return (
@@ -16,6 +18,9 @@ export default function Home() {
 
         <div className="category">
           <CategoriesComp />
+        </div>
+        <div className="category">
+          <BrandsComp />
         </div>
       </div>
       <hr />

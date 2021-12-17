@@ -4,12 +4,14 @@ import TheNavbar from "./components/TheNavbar";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import ProfilePage from "./pages/ProfilePage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import "./ProductCard.css";
 import "../node_modules/antd/dist/antd.css";
 import ProductsPage from "./pages/ProductsPage";
 import ItemsOfSingleCategory from "./pages/ItemsOfSingleCategory";
+import ItemsOfSingleBrand from "./pages/ItemsOfSingleBrand";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import CategoriesComp from "./components/CategoriesComp";
 import ShoppingCart from "./pages/ShoppingCart";
@@ -17,8 +19,6 @@ import FooterComp from "./components/FooterComp";
 import NotFound from "./pages/NotFound";
 
 function App() {
-  const [open, setOpen] = useState(false);
-
   return (
     <div className="App">
       <TheNavbar />
@@ -43,6 +43,7 @@ function App() {
           }
         />
         <Route path="/login" element={<Login />} />
+        <Route path="/profile" element={<ProfilePage />} />
         <Route path="/products/:id" element={<ProductDetailPage />} />
         <Route
           path="/products/filter/:category"
@@ -52,6 +53,15 @@ function App() {
             </div>
           }
         />
+        <Route
+          path="/products/filter/:brand"
+          element={
+            <div className="card-div">
+              <ItemsOfSingleBrand />
+            </div>
+          }
+        />
+
         <Route path="/register" element={<Register />} />
         <Route path="/cart" element={<ShoppingCart />} />
         <Route path="/not-found" element={<NotFound />} />

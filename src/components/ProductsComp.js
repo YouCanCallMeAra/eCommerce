@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 export default function Product() {
   const { data = [], isLoading } = useGetProductsQuery();
-  const cart = useSelector((state) => state.cart.value);
+  // const cart = useSelector((state) => state.cart.value);
   const dispatch = useDispatch();
 
   return data.map((products, index) => {
@@ -24,10 +24,9 @@ export default function Product() {
           <div className="product-details">
             <span className="product-catagory">{products.category}</span>
             <h5>
-              {/* <a href="">{product.name}</a> */}
               <Link to={`/products/${products._id}`}>{products.name}</Link>
             </h5>
-            {/* <p>{products.description}</p> */}
+
             <div className="product-bottom-details">
               <div className="product-price">{products.price}$</div>
               <div className="product-links">

@@ -36,26 +36,26 @@ const CartSlice = createSlice({
       });
     },
   },
-  // incrementQuantity: (state, action) => {
-  //   let itemIndex = state.value.findIndex(
-  //     (product) => product._id === action.payload
-  //   );
-  //   state.value[itemIndex].count++;
-  //   localStorage.setItem("cart", JSON.stringify(state.value));
-  // },
-  // decrementQuantity: (state, action) => {
-  //   let itemIndex = state.value.findIndex(
-  //     (product) => product._id === action.payload
-  //   );
-  //   state.value[itemIndex].count--;
-  //   localStorage.setItem("cart", JSON.stringify(state.value));
-  // },
+  incrementQuantity: (state, action) => {
+    let itemIndex = state.value.findIndex(
+      (product) => product._id === action.payload
+    );
+    state.value[itemIndex].count++;
+    localStorage.setItem("cart", JSON.stringify(state.value));
+  },
+  decrementQuantity: (state, action) => {
+    let itemIndex = state.value.findIndex(
+      (product) => product._id === action.payload
+    );
+    state.value[itemIndex].count--;
+    localStorage.setItem("cart", JSON.stringify(state.value));
+  },
 });
 
 export const {
   addToCart,
   removeFromCart,
-  // incrementQuantity,
-  // decrementQuantity,
+  incrementQuantity,
+  decrementQuantity,
 } = CartSlice.actions;
 export default CartSlice.reducer;
