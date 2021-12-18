@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/category.css";
 import { useGetBrandsQuery } from "../services/productsApi";
+
 import { Link } from "react-router-dom";
 // import ScrollAnimation from "react-animate-on-scroll";
 
@@ -10,12 +11,10 @@ export default function BrandsComp() {
   return data.map((brands) => {
     return (
       <div>
-        <Link to={`/products/filter/${brands.name}`}>
-          <div className="single-category">
-            <h3 className="category-comp-titles">
-              {brands.name.toUpperCase()}
-            </h3>
-            <img src={brands.image} style={{ width: "300px" }} />
+        <Link to={`/products/brandfilter/${brands.name}`}>
+          <div className="single-brand">
+            {/* <h3 className="brand-comp-titles">{brands.name.toUpperCase()}</h3> */}
+            <img src={brands.image} style={{ width: "120px" }} />
           </div>
         </Link>
       </div>

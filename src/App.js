@@ -12,6 +12,7 @@ import "../node_modules/antd/dist/antd.css";
 import ProductsPage from "./pages/ProductsPage";
 import ItemsOfSingleCategory from "./pages/ItemsOfSingleCategory";
 import ItemsOfSingleBrand from "./pages/ItemsOfSingleBrand";
+import ItemsOfSingleGender from "./pages/ItemsOfSingleGender";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import CategoriesComp from "./components/CategoriesComp";
 import ShoppingCart from "./pages/ShoppingCart";
@@ -46,7 +47,7 @@ function App() {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/products/:id" element={<ProductDetailPage />} />
         <Route
-          path="/products/filter/:category"
+          path="/products/categoryfilter/:category"
           element={
             <div className="card-div">
               <ItemsOfSingleCategory />
@@ -54,10 +55,18 @@ function App() {
           }
         />
         <Route
-          path="/products/filter/:brand"
+          path="/products/brandfilter/:brand"
           element={
             <div className="card-div">
               <ItemsOfSingleBrand />
+            </div>
+          }
+        />
+        <Route
+          path="/products/genderfilter/:gender"
+          element={
+            <div className="card-div">
+              <ItemsOfSingleGender />
             </div>
           }
         />

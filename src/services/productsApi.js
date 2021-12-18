@@ -37,6 +37,12 @@ export const productsApiSlice = createApi({
       getBrandsbyBrand: builder.query({
         query: (brand) => `/products?brand=${brand}`,
       }),
+      getGenders: builder.query({
+        query: () => "/genders",
+      }),
+      getGendersByGender: builder.query({
+        query: (gender) => `/products?gender=${gender}`,
+      }),
       registerUser: builder.mutation({
         query: (data) => ({
           url: "register",
@@ -64,4 +70,6 @@ export const {
   useLoginUserMutation,
   useGetBrandsQuery,
   useGetBrandsbyBrandQuery,
+  useGetGendersQuery,
+  useGetGendersByGenderQuery,
 } = productsApiSlice;

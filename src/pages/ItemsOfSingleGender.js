@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useGetCategoryByCategoryQuery } from "../services/productsApi";
+import { useGetGendersByGenderQuery } from "../services/productsApi";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
@@ -9,14 +9,10 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../features/CartSlice";
 
 export default function ItemsOfSingleCategory() {
-  let { category } = useParams();
+  let { gender } = useParams();
   const dispatch = useDispatch();
 
-  const {
-    data = [],
-    isLoading,
-    error,
-  } = useGetCategoryByCategoryQuery(category);
+  const { data = [], isLoading, error } = useGetGendersByGenderQuery(gender);
 
   if (isLoading) {
     return <div>loading...</div>;

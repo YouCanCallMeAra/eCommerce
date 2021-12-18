@@ -17,13 +17,10 @@ export default function FooterComp() {
             <div class="col-sm-12 col-md-6">
               <h6>About</h6>
               <p class="text-justify">
-                Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative
-                to help the upcoming programmers with the code. Scanfcode
-                focuses on providing the most efficient code or snippets as the
-                code wants to be simple. We will help programmers build up
-                concepts in different programming languages that include C, C++,
-                Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and
-                Algorithm.
+                Bit Shop is project to showcase all the skills that we have
+                learned during a 3 month long Bootcamp organized by Potan and
+                GIZ. during this bootcamp We learned and used MERN stack to
+                become a fullstack developer.
               </p>
             </div>
 

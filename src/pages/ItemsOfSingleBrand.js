@@ -30,6 +30,7 @@ export default function ItemsOfSingleCategory() {
         </div>
         <div className="product-details">
           <span className="product-catagory">{products.category}</span>
+
           <h5>
             <Link to={`/products/${products._id}`}>{products.name}</Link>
           </h5>
