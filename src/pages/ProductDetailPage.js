@@ -23,10 +23,10 @@ export default function ProductDetailPage() {
         <img src={data.image} />
       </div>
       <div className="product-details">
-        <h1>{data.name}</h1>
-        <h4>{data.description}</h4>
+        <p style={{ fontSize: "21px" }}>{data.name}</p>
+        <p style={{ fontSize: "15px" }}>{data.description}</p>
         <p style={{ color: "grey" }}>in stock</p>
-        {/* <select>
+        <select>
           {data.size?.map((sizee) => {
             return <option value={`${sizee}`}>{sizee} </option>;
           })}
@@ -50,7 +50,7 @@ export default function ProductDetailPage() {
               ></button>
             );
           })}
-        </div> */}
+        </div>
 
         <div className="product-bottom-details">
           <div className="product-price">Price: {data.price}$</div>

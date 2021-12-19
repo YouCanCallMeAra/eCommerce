@@ -6,12 +6,14 @@ import jwt from "jsonwebtoken";
 import { Link, Navigate } from "react-router-dom";
 
 export default function Login() {
-  const { isAuth } = useSelector((state) => state.user);
+  const isAuth = useSelector((state) => state.user.isAuth);
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   const [userLogin, { isError, isLoading, data, error }] =
     useLoginUserMutation();
+
   useEffect(() => {
     data && dispatch(login(jwt.decode(data?.token)));
   }, [data]);
@@ -55,9 +57,11 @@ export default function Login() {
             />
             <button type="submit">LOGIN</button>
 
-            <a>DO NOT YOU REMEMBER THE PASSWORD?</a>
-            <a>CREATE A NEW ACCOUNT</a>
+            {/* <a>DO NOT YOU REMEMBER THE PASSWORD?</a> */}
+
+            <Link to="/register">CREATE A NEW ACCOUNT</Link>
           </form>
+          {data && localStorage.setItem("authToken", data.token)}
         </wrapper>
       </container>
     </div>

@@ -19,7 +19,7 @@ export default function TheNavbar() {
   const handleShow = () => setShow(true);
 
   const { isAuth } = useSelector((state) => state.user);
-  const cart = useSelector((state) => state.cart.value);
+  const cart = useSelector((state) => state.cart.cartItems);
   const dispatch = useDispatch();
   const StyledBadge = styled(Badge)(({ theme }) => ({
     "& .MuiBadge-badge": {

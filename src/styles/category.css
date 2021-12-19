@@ -98,8 +98,10 @@
   .gender-comp-titles {
     list-style: none;
     position: absolute;
-    top: 70px;
+    top: 285px;
     color: white;
+    text-shadow: #fc0 1px 0 10px;
+    /* box-shadow: 15px 15px 15px 0px black; */
   }
 
   .gender-comp-image {

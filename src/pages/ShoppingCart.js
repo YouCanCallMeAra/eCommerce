@@ -1,8 +1,8 @@
 import { React, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "../styles/shoppingCartNew.css";
-// import ProductsComp from "../components/ProductsComp";
-// import { useGetProductsQuery } from "../services/productsApi";
+import { Link, Navigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import {
   // addToCart,
   removeFromCart,
@@ -14,9 +14,10 @@ import Button from "react-bootstrap/Button";
 import { faTrash, faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 
 export default function ShoppingCart() {
-  const cart = useSelector((state) => state.cart.value);
+  const cart = useSelector((state) => state.cart.cartItems);
   const dispatch = useDispatch();
-
+  const { isAuth } = useSelector((state) => state.user);
+  let navigate = useNavigate();
   var totalPrice = 0;
   return (
     // <div className="main-main-shopping-cart-container">
@@ -37,8 +38,8 @@ export default function ShoppingCart() {
                   <FontAwesomeIcon
                     icon={faMinus}
                     onClick={() => {
+                      dispatch(decrementQuantity(product._id));
                       alert("Not Implemented yet!");
-                      // dispatch(decrementQuantity(product._id));
                     }}
                   />
                 </a>
@@ -55,7 +56,7 @@ export default function ShoppingCart() {
                     icon={faPlus}
                     onClick={() => {
                       alert("Not Implemented yet!");
-                      // dispatch(incrementQuantity(product._id));
+                      dispatch(incrementQuantity(product._id));
                     }}
                   />
                 </a>
@@ -67,10 +68,17 @@ export default function ShoppingCart() {
       {/* </div> */}
       <div className="shopping-cart-total">
         <h1>TOTAL:{totalPrice.toFixed(2)}$</h1>
+
         <Button
           variant="outline-primary"
           onClick={() => {
-            alert("Piroza!!");
+            if (isAuth) {
+              alert("Your order was successful!!");
+            }
+            if (!isAuth) {
+              alert("please login first if you have an account. or register!!");
+              navigate("/login");
+            }
           }}
         >
           check out

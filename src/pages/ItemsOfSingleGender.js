@@ -24,7 +24,7 @@ export default function ItemsOfSingleCategory() {
   return data.map((products, index) => {
     return (
       <div className="product-card" key={index}>
-        <div className="badge">Hot</div>
+        {/* <div className="badge">Hot</div> */}
         <div className="product-tumb">
           <img src={products.image} alt="" />
         </div>
